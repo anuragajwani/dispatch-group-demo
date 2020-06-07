@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="POSDispatchGroupDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0R-gO-Rw7">
+                                <rect key="frame" x="133" y="226.5" width="148" height="30"/>
+                                <state key="normal" title="Create single product"/>
+                                <connections>
+                                    <action selector="createSingleProduct:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cVi-TU-f15"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Wt-e3-IVB">
+                                <rect key="frame" x="87" y="649.5" width="240" height="30"/>
+                                <state key="normal" title="Create products from products.csv"/>
+                                <connections>
+                                    <action selector="uploadProductsCSV:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2hD-EF-nWg"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creating product(s) ... " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFq-J3-49I">
+                                <rect key="frame" x="120.5" y="442.5" width="173.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2Wt-e3-IVB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="GTk-bN-pwg"/>
+                            <constraint firstItem="lFq-J3-49I" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Jqt-37-pL1"/>
+                            <constraint firstItem="Y0R-gO-Rw7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="X3i-aC-7ep"/>
+                            <constraint firstItem="2Wt-e3-IVB" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="1.5" id="Xud-Fb-JCu"/>
+                            <constraint firstItem="lFq-J3-49I" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ZDK-jU-q2a"/>
+                            <constraint firstItem="Y0R-gO-Rw7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.5" id="sCP-Fe-LkH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="progressLabel" destination="lFq-J3-49I" id="PEi-Ay-2sE"/>
+                        <outletCollection property="buttons" destination="Y0R-gO-Rw7" collectionClass="NSMutableArray" id="vdt-hR-vVp"/>
+                        <outletCollection property="buttons" destination="2Wt-e3-IVB" collectionClass="NSMutableArray" id="7tZ-gc-01c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133" y="139"/>
+        </scene>
+    </scenes>
+</document>
