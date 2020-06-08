@@ -75,7 +75,6 @@ class ViewController: UIViewController {
         request.httpMethod = "POST"
         request.httpBody = try? JSONEncoder().encode(product)
         let task = URLSession.shared.downloadTask(with: request, completionHandler: { (url, response, error) in
-            DispatchQueue.main.async { self.isCreatingProducts = false }
             completionHandler(error)
         })
         self.isCreatingProducts = true
@@ -95,6 +94,7 @@ class ViewController: UIViewController {
     }
     
     private func showProductsCreatedAlert() {
+        self.isCreatingProducts = falsePOSDispatchGroupDemo/ViewController.swift
         let alert = UIAlertController(title: "Success", message: "Product(s) were created successfully", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
