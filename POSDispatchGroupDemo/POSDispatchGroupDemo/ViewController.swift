@@ -55,7 +55,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func uploadProductsCSV(_ sender: Any) {
-        // TODO
+        let dispatchGroup = DispatchGroup()
+        let products = self.getProductsFromCSV()
+        products.forEach({ product in
+            dispatchGroup.enter()
+            self.createProduct(product, onCompletion: { _ in
+                dispatchGroup.leave()
+            })
+        })
+        dispatchGroup.notify(queue: .main, execute: { self.showProductsCreatedAlert() })
     }
     
     private func getProductsFromCSV() -> [Product] {
