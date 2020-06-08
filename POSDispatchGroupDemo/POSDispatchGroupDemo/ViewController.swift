@@ -94,7 +94,7 @@ class ViewController: UIViewController {
     }
     
     private func showProductsCreatedAlert() {
-        self.isCreatingProducts = falsePOSDispatchGroupDemo/ViewController.swift
+        self.isCreatingProducts = false
         let alert = UIAlertController(title: "Success", message: "Product(s) were created successfully", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
